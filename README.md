@@ -34,7 +34,7 @@ $ cd <root>/cdk
 $ cdk deploy ecs-fargate-rolling-update-ecs-stack
 ```
 
-Now, you can access your sample page via the Application Loadbalancer.
+Now you can access your sample page via the Application Loadbalancer.
 
 5. Creates a CodeCommit stack.
 

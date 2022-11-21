@@ -129,7 +129,7 @@ export class PipelineStack extends cdk.Stack {
                 "echo Logging in to Amazon ECR...",
                 "AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)",
                 "aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com",
-                "COMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)",
+                "COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)",
                 "IMAGE_TAG=${COMMIT_HASH:=latest}",
               ],
             },
