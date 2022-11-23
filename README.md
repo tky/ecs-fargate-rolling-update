@@ -59,3 +59,4 @@ $ cdk deploy ecs-fargate-rolling-update-pipeline-stack
 - https://github.com/kimisme9386/lab-ecs-fargate-cd-infra
 - https://chariosan.com/2021/04/18/aws_cdk_vpc_endpoint/
 - https://dev.classmethod.jp/articles/codepipeline-support-ecs-deploy/
+- https://dev.classmethod.jp/articles/cdk-approval-pipeline/

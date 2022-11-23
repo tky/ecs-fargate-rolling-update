@@ -39,4 +39,5 @@ new PipelineStack(app, `${prefix}-pipeline-stack`, {
   ecrRepository: ecrStack.repository,
   ecsContainerName: containerName,
   sourceRepositoryName: codeCommitStack.repository.repositoryName,
+  useApprovalState: true,
 });

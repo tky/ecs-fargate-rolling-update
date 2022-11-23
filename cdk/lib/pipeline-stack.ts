@@ -18,6 +18,7 @@ interface PipelineProps extends cdk.StackProps {
   ecrRepository: ecr.IRepository;
   ecsContainerName: string;
   sourceRepositoryName: string;
+  useApprovalState: boolean;
 }
 
 export class PipelineStack extends cdk.Stack {
@@ -37,6 +38,17 @@ export class PipelineStack extends cdk.Stack {
         props.ecrRepository,
         props.ecsContainerName
       );
+
+    if (props.useApprovalState) {
+      const approvalAction = new codepipeline_actions.ManualApprovalAction({
+        actionName: "DeployApprovalAction",
+        runOrder: 2,
+      });
+      pipeline.addStage({
+        stageName: "Approval",
+        actions: [approvalAction],
+      });
+    }
 
     const imageArtifact = new codePipeline.Artifact("imageDetail");
     let manifestArtifact = null;
